@@ -41,6 +41,8 @@ const Tabledata = ({ students, sClass, mark }) => {
         obj,
         config
       );
+
+      console.log("response", response);
       if (!toast.isActive(id)) {
         toast({
           id,
@@ -50,8 +52,6 @@ const Tabledata = ({ students, sClass, mark }) => {
           description: "амжилттай дүн тавьлаа!",
         });
       }
-      console.log("response", response);
-
       const response1 = await axios.post(
         "http://localhost:5000/getStuByClass",
         clsName
