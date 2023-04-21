@@ -9,38 +9,50 @@ import {
 
 export const navData = [
   {
-    Title: "Хянах самбар",
-    toLink: "dashboard",
+    title: "Хянах самбар",
+    toLink: "/dashboard",
     icon: FiGrid,
+    drop: [
+      {
+        title: "Бүх сурагч",
+        toLink: "/students",
+        icon: BiFace,
+      },
+      {
+        title: "Сурагч нэмэх",
+        toLink: "/students/add",
+        icon: BiFace,
+      },
+    ],
   },
   {
-    Title: "Баталгаажуулалт",
+    title: "Баталгаажуулалт",
     toLink: "/attendance",
     icon: BiFace,
   },
   {
-    Title: "Дүн оруулах",
+    title: "Дүн оруулах",
     toLink: "/mark",
     icon: BiBuildings,
   },
   {
-    Title: "Гомдол илгээх",
+    title: "Гомдол илгээх",
     toLink: "/complain",
     icon: FiSlack,
   },
   {
-    Title: "Хуанли",
+    title: "Хуанли",
     toLink: "/calendar",
     icon: BiCalendar,
   },
 
   {
-    Title: "мэдэгдэл",
+    title: "мэдэгдэл",
     toLink: "/notice",
     icon: BiCalendarEvent,
   },
   {
-    Title: "Чат",
+    title: "Чат",
     toLink: "/chat",
     icon: BiChat,
   },

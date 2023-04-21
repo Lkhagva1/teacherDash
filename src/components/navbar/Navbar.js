@@ -75,7 +75,7 @@ const Navbar = ({ onOpen, ...rest }) => {
               Хуудас
             </BreadcrumbLink>
           </BreadcrumbItem>
-          {navData.filter((e) => e.toLink !== "/login") ? (
+          {navData.filter((e) => e.toLink !== "/profile") ? (
             location.pathname === "/" ? null : location.pathname ? (
               <BreadcrumbItem>
                 <BreadcrumbLink href={location.pathname} fontSize={12}>
@@ -84,7 +84,7 @@ const Navbar = ({ onOpen, ...rest }) => {
                       (e) =>
                         e.toLink.split("/")[1] ===
                         location.pathname.split("/")[1]
-                    ).Title
+                    ).title
                   }
                 </BreadcrumbLink>
               </BreadcrumbItem>
@@ -97,19 +97,31 @@ const Navbar = ({ onOpen, ...rest }) => {
             : location.pathname === "/profile"
             ? "Профайл"
             : location.pathname === "/attendance"
-            ? "Баталгаажуулалт"
-            : location.pathname === "/attendance/:id"
-            ? "анги"
+            ? "баталгаажуулалт"
             : location.pathname === "/mark"
             ? "дүн"
-            : location.pathname === "/mark/:id"
-            ? "дүн f"
+            : location.pathname === "/teachers"
+            ? "Багш"
+            : location.pathname === "/teachers/add"
+            ? "Багш нэмэх"
+            : location.pathname === "/club"
+            ? "клуб"
+            : location.pathname === "/club/add"
+            ? "клуб нэмэх"
             : location.pathname === "/complain"
             ? "гомдол"
             : location.pathname === "/notice"
             ? "мэдэгдэл"
+            : location.pathname === "/notice/add"
+            ? "мэдэгдэл нэмэх"
+            : location.pathname === "/subject"
+            ? "үзэх хичээл"
             : location.pathname === "/calendar"
             ? "хуанли"
+            : location.pathname === "/event"
+            ? "үйл ажиллагаа"
+            : location.pathname === "/library"
+            ? "номын сан"
             : location.pathname === "/chat"
             ? "чат"
             : null}

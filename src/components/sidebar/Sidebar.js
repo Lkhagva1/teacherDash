@@ -145,7 +145,7 @@ const Sidebar = ({ onClose, ...rest }) => {
                         }
                         ml={"2"}
                       >
-                        {e.Title}
+                        {e.title}
                       </Text>
                     </HStack>
                     <AccordionIcon
@@ -174,7 +174,7 @@ const Sidebar = ({ onClose, ...rest }) => {
                             width: "90%",
                             padding: 8,
                           }}
-                          mt={e.Title === "Interval" ? 4 : 0}
+                          mt={e.title === "Interval" ? 4 : 0}
                           transition="all 0.3s"
                           _hover={{
                             backgroundColor: "#F7F7F7",
@@ -207,7 +207,7 @@ const Sidebar = ({ onClose, ...rest }) => {
                                 : "normal"
                             }
                           >
-                            {e.Title}
+                            {e.title}
                           </Text>
                         </HStack>
                       ))}
@@ -273,7 +273,7 @@ const Sidebar = ({ onClose, ...rest }) => {
                       }
                       ml={"2"}
                     >
-                      {e.Title}
+                      {e.title}
                     </Text>
                   </HStack>
                 </Link>
