@@ -23,7 +23,7 @@ import axios from "axios";
 import Cookies from "js-cookie";
 import moment from "moment";
 import { FiX, FiCheck, FiUserX } from "react-icons/fi";
-const Tabledata = ({ students, sClass }) => {
+const Tabledata = ({ students, sClass, mark }) => {
   const [currentDate, setCurrentDate] = useState("");
   const makeStuAttendance = async (clsName, obj) => {
     const config = {
@@ -54,35 +54,35 @@ const Tabledata = ({ students, sClass }) => {
     return str.replace(/[^0-9]/g, "");
   };
 
-  //   var ans, curDate;
+  var ans, curDate;
 
-  //   const newFun = async () => {
-  //     const formatted = moment(Date.now()).format("L");
+  const newFun = async () => {
+    const formatted = moment(Date.now()).format("L");
 
-  //     curDate = await exTractNumber(formatted);
-  //     setCurrentDate(curDate);
-  //   };
+    curDate = await exTractNumber(formatted);
+    setCurrentDate(curDate);
+  };
 
   //   newFun();
 
-  //   const makeAttendance = async (student, value) => {
-  //     let currentTimestamp = Date.now();
+  const makeAttendance = async (student, value) => {
+    let currentTimestamp = Date.now();
 
-  //     const formatted = moment(currentTimestamp).format("L");
+    const formatted = moment(currentTimestamp).format("L");
 
-  //     ans = await exTractNumber(formatted);
-  //     const Obj = {
-  //       timestamp: currentTimestamp,
-  //       type: value,
-  //       StudentId: student._id,
-  //       dateId: ans,
-  //     };
+    ans = await exTractNumber(formatted);
+    const Obj = {
+      timestamp: currentTimestamp,
+      type: value,
+      StudentId: student._id,
+      dateId: ans,
+    };
 
-  //     var another = {
-  //       clsName: sClass,
-  //     };
-  //     makeStuAttendance(another, Obj);
-  //   };
+    var another = {
+      clsName: sClass,
+    };
+    makeStuAttendance(another, Obj);
+  };
   return (
     <Flex p={6} direction="column">
       <Heading mb={4}></Heading>
@@ -110,7 +110,7 @@ const Tabledata = ({ students, sClass }) => {
                   <Td>{item.clsName}</Td>
                   <Td>{item.mobile}</Td>
                   <Td>{item.addmision_year}</Td>
-                  {/* <Td>
+                  <Td>
                     {item && item.pList && item.pList.includes(currentDate) ? (
                       <>
                         {item.attdenList.filter(
@@ -143,7 +143,7 @@ const Tabledata = ({ students, sClass }) => {
                         </Button>
                       </>
                     )}
-                  </Td> */}
+                  </Td>
                 </Tr>
               </Tbody>
             ))}
