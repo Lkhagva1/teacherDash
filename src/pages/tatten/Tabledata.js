@@ -4,6 +4,7 @@ import {
   TableContainer,
   FormControl,
   FormLabel,
+  useToast,
 } from "@chakra-ui/react";
 import {
   Button,
@@ -25,6 +26,8 @@ import moment from "moment";
 import { FiX, FiCheck, FiUserX } from "react-icons/fi";
 const Tabledata = ({ students, sClass, mark }) => {
   const [currentDate, setCurrentDate] = useState("");
+  const toast = useToast();
+  const id = "toast";
   const makeStuAttendance = async (clsName, obj) => {
     const config = {
       headers: {
@@ -38,7 +41,15 @@ const Tabledata = ({ students, sClass, mark }) => {
         obj,
         config
       );
-
+      if (!toast.isActive(id)) {
+        toast({
+          id,
+          duration: 2000,
+          position: "top",
+          status: "success",
+          description: "амжилттай дүн тавьлаа!",
+        });
+      }
       console.log("response", response);
 
       const response1 = await axios.post(

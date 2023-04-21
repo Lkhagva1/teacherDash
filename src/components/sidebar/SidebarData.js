@@ -56,4 +56,9 @@ export const navData = [
     toLink: "/chat",
     icon: BiChat,
   },
+  {
+    title: "профайл",
+    toLink: "/profile",
+    icon: BiChat,
+  },
 ];
