@@ -31,7 +31,7 @@ import AuthContext from "../../context/AuthContext";
 import moment from "moment";
 const Tatten = (props) => {
   const [currentDate, setCurrentDate] = useState("");
-  const [id, setId] = useState([]);
+  const [value, setId] = useState([]);
   const [profile, setProfile] = useState([]);
   const [students, setStudents] = useState([]);
   const getStudentByClass = async (clsName) => {
@@ -89,11 +89,11 @@ const Tatten = (props) => {
     }
   }, []);
 
-  const handleClick = (id) => {
+  const handleClick = (value) => {
     var obj = {
-      id,
+      value,
     };
-    getStudentByClass(id);
+    getStudentByClass(value);
   };
   let classNum = [1, 2, 3, 4, 5, 6];
   console.log("datata", students);
@@ -113,7 +113,7 @@ const Tatten = (props) => {
 
   newFun();
 
-  const makeAttendance = async (student, value) => {
+  const makeAttendance = async (student, valued) => {
     let currentTimestamp = Date.now();
 
     const formatted = moment(currentTimestamp).format("L");
@@ -121,13 +121,13 @@ const Tatten = (props) => {
     ans = await exTractNumber(formatted);
     const Obj = {
       timestamp: currentTimestamp,
-      type: value,
+      type: valued,
       StudentId: student._id,
       dateId: ans,
     };
 
     var another = {
-      clsName: id,
+      clsName: value,
     };
     makeStuAttendance(another, Obj);
     getStudentByClass(another);
