@@ -43,7 +43,15 @@ const Tabledata = ({ students, sClass, mark }) => {
       );
 
       console.log("response", response);
-
+      if (!toast.isActive(id)) {
+        toast({
+          id,
+          duration: 2000,
+          position: "top",
+          status: "success",
+          description: "амжилттай зөвшөөрлөө",
+        });
+      }
       const response1 = await axios.post(
         "http://localhost:5000/getStuByClass",
         clsName
@@ -140,7 +148,7 @@ const Tabledata = ({ students, sClass, mark }) => {
                         </Button>
                         <Button
                           color="red"
-                          onClick={() => makeAttendance(item, "зөвшөөрөхгүй")}
+                          onClick={() => makeAttendance(item, "зөвшөөрөөгүй")}
                         >
                           <FiX />
                         </Button>
