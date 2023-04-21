@@ -34,6 +34,7 @@ const Tatten = (props) => {
   const [value, setId] = useState([]);
   const [profile, setProfile] = useState([]);
   const [students, setStudents] = useState([]);
+  const [sClass, setSClass] = useState("");
   const getStudentByClass = async (clsName) => {
     // console.log("profile..", clsName);
     try {
@@ -93,6 +94,7 @@ const Tatten = (props) => {
     var obj = {
       value,
     };
+    setSClass(value);
     getStudentByClass(value);
   };
   let classNum = [1, 2, 3, 4, 5, 6];
@@ -113,7 +115,7 @@ const Tatten = (props) => {
 
   newFun();
 
-  const makeAttendance = async (student, valued) => {
+  const makeAttendance = async (student, value) => {
     let currentTimestamp = Date.now();
 
     const formatted = moment(currentTimestamp).format("L");
@@ -121,13 +123,13 @@ const Tatten = (props) => {
     ans = await exTractNumber(formatted);
     const Obj = {
       timestamp: currentTimestamp,
-      type: valued,
+      type: value,
       StudentId: student._id,
       dateId: ans,
     };
 
     var another = {
-      clsName: value,
+      clsName: sClass,
     };
     makeStuAttendance(another, Obj);
     getStudentByClass(another);
