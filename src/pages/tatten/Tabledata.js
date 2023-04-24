@@ -49,7 +49,7 @@ const Tabledata = ({ students, sClass, mark }) => {
           duration: 2000,
           position: "top",
           status: "success",
-          description: "амжилттай зөвшөөрлөө",
+          description: "амжилттай",
         });
       }
       const response1 = await axios.post(

@@ -47,7 +47,7 @@ export const navData = [
   },
 
   {
-    title: "мэдэгдэл",
+    title: "Мэдэгдэл",
     toLink: "/notice",
     icon: BiCalendarEvent,
   },
